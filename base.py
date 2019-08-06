@@ -68,7 +68,7 @@ class Neliti:
             if not(description):
                 return False
             url = (record.metadata)['identifier']
-            type = (record.metadata)['type']
+            type_ = (record.metadata)['type']
             date = (record.metadata)['date']
             title = (record.metadata)['title']
             publisher = (record.metadata)['publisher']
@@ -80,7 +80,7 @@ class Neliti:
 				
         data = {
 			'url' : url,
-			'type' : type,
+			'type' : type_,
 			'date' : date,
 			'title' : title,
 			'publisher' : publisher,
@@ -133,12 +133,7 @@ class Neliti:
 	
         if (('.English' in description) or ('.Indonesian' in description)):
             return False
-            print(description)
-            description = input(">>>\n")
-            print("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-            print(description)
-            print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n")
-            return description
+            
 		
         if (detect(description) == "id"):
             translate = self._get_translation(description)
